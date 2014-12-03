@@ -1,0 +1,18 @@
+<form class="form" name="loginForm" novalidate ng-submit="login()">
+<div class="alert alert-danger" ng-show="wrongCredentials">
+Wrong Credentials
+</div>
+<div class="form-group" ng-class="{'has-error' : loginForm.email.$invalid && loginForm.email.$dirty,'has-success' : loginForm.email.$valid && loginForm.email.$dirty}">
+<label for="" class="control-label">Email</label>
+<input type="email" name="email" class="form-control" ng-model="user.email" required/>
+<p class="help-block" ng-show="loginForm.email.$invalid && loginForm.email.$dirty && loginForm.submitted">Wrong Email</p>
+</div>
+<div class="form-group" ng-class="{'has-error' : loginForm.password.$invalid && loginForm.password.$dirty,'has-success' : loginForm.password.$valid && loginForm.password.$dirty}">
+<label for="" class="control-label">Password</label>
+<input type="password" name="password" class="form-control" ng-model="user.password" required/>
+</div>
+<div class="form-group">
+<button class="btn btn-primary" type="submit">LogIn</button>
+</div>
+
+</form>
